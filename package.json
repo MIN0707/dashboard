@@ -13,8 +13,10 @@
     "next": "14.0.1",
     "prettier": "^3.2.5",
     "react": "18",
+    "react-css-modules": "^4.7.11",
     "react-dom": "18",
-    "react-icons": "4.11"
+    "react-icons": "4.11",
+    "recharts": "^2.9.0"
   },
   "devDependencies": {
     "eslint": "8",
