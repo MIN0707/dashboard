@@ -27,7 +27,7 @@ const Rightbar = () => {
         </div>
       </div>
       <div className={styles.item}>
-        <div cwlassName={styles.text}>
+        <div className={styles.text}>
           <span className={styles.notification}>🚀 Coming Soon</span>
           <h3 className={styles.title}>
             New server actions are available, partical pre-rendering is coming
