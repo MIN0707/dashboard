@@ -1,4 +1,4 @@
-import styles from '@/app/ui/dashboard/users/singleuser/singleUser.module.css';
+import styles from '@/app/ui/dashboard/users/singleUser/singleUser.module.css';
 import Image from 'next/image';
 
 const SingleUserPage = () => {
@@ -21,7 +21,7 @@ const SingleUserPage = () => {
           <label>Phone</label>
           <input type='phone' name='phone' placeholder='+1234567' />
           <label>Address</label>
-          <input type='text' name='address' placeholder='New York' />
+          <textarea type='text' name='address' placeholder='New York' />
           <label>Is Admin?</label>
           <select name='isAdmin' id='isAdmin'>
             <option value={true}>Yes</option>
