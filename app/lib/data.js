@@ -46,3 +46,23 @@ export async function fetchProducts(q, page) {
     console.log(err);
   }
 }
+
+export async function fetchUser(id) {
+  try {
+    connectToDb();
+    const user = await User.findById(id);
+    return user;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export async function fetchProduct(id) {
+  try {
+    connectToDb();
+    const product = await Product.findById(id);
+    return product;
+  } catch (err) {
+    console.log(err);
+  }
+}

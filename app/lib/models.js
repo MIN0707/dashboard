@@ -25,6 +25,10 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: true,
     },
+    isActive: {
+      type: Boolean,
+      default: true,
+    },
     phone: {
       type: String,
     },
@@ -41,6 +45,10 @@ const productSchema = new mongoose.Schema(
       type: String,
       require: true,
       unique: true,
+    },
+    cat: {
+      type: String,
+      require: true,
     },
     desc: {
       type: String,
