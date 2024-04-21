@@ -5,18 +5,18 @@ import { Product, User } from './models';
 import { connectToDb } from './utils';
 import { redirect } from 'next/navigation';
 import bcrypt from 'bcrypt';
+import { signIn } from '../auth';
 
 export async function addUser(formData) {
   const { username, email, password, phone, address, isAdmin, isActive } =
     Object.fromEntries(formData);
   try {
     connectToDb();
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
+    const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = new User({
       username,
       email,
-      hashedPassword,
+      password: hashedPassword,
       phone,
       address,
       isAdmin,
@@ -130,4 +130,14 @@ export async function deleteProduct(formData) {
     console.log(err);
   }
   revalidatePath('/dashboard/products');
+}
+
+export async function authenticate(formData) {
+  const { username, password } = Object.fromEntries(formData);
+  try {
+    await signIn('credentials', { username, password });
+  } catch (err) {
+    console.log(err);
+    throw err;
+  }
 }
